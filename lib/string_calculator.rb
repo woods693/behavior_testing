@@ -16,4 +16,13 @@ class StringCalculator
       #end 
     end
   end
+  
+  def self.minus(input)
+    if input.empty?
+      0
+    else
+      numbers = input.split(",").map {|num| num.to_i}
+      numbers.inject { |result, n| result - n }
+    end
+  end
 end
