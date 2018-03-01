@@ -1,5 +1,6 @@
 require "runner"
-
+require "pry"
+require 'pry-nav'
 describe Run do
   describe "attributes" do
     subject do
@@ -15,7 +16,7 @@ describe Run do
   
   describe ".count" do
     context "logging 2 runs in first week and 1 more in next" do 
-      before do
+      before(:all) do
         2.times do
           Run.log(:distance => 4,
                   :duration => 50.2,

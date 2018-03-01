@@ -1,3 +1,5 @@
+require "pry"
+
 class Run 
   attr_accessor :distance, :duration, :timestamp, :nxt
   $a = Array.new
@@ -9,7 +11,7 @@ class Run
 
   end
 
-  def self.log(arg) 
+  def self.log(arg)
     $a << Run.new(arg)
   end
   
@@ -17,11 +19,8 @@ class Run
     if week.nil?
       $a.count
     else
-      $a.count
-      #$a.each do |entry|
-      #  if entry.timestamp == value
-      #    
-      #end
+      key, value = week.first
+      $a.find_all.count { |entry| entry.timestamp == value }
     end
   end
 
